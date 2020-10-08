@@ -16,32 +16,41 @@ const lowercaseCharacterSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
 if (lower === true) {
   var letter = (Math.floor(Math.random() * 25));
   parseInt(letter);
-  console.log(letter);
   var newLetter = (lowercaseCharacterSet[letter]);
-  console.log(newLetter)
   generatePassword = generatePassword + newLetter;
   (characterAmount = characterAmount - 1);
 } else { }
 //uppercase
 var upper = window.confirm("Would you like to include Uppercase?");
 var uppercaseCharacterSet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-if (lupper === true) {
-  var letter = (Math.floor(Math.random() * 25));
-  parseInt(letter);
+if (upper === true) {
+  var upLetter = (Math.floor(Math.random() * 25));
+  parseInt(upLetter);
 
-  var newLetter = (uppercaseCharacterSet[letter]);
-  generatePassword = generatePassword + newLetter;
+  var newUpLetter = (uppercaseCharacterSet[upLetter]);
+  generatePassword = generatePassword + newUpLetter;
   (characterAmount = characterAmount - 1);
 } else { }
 //Number
 var number = window.confirm("Would you like to include Number?");
-var nuberCharacterSet = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
+var numberCharacterSet = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+if (number === true) {
+  var numbers = (Math.floor(Math.random() * 10));
+  parseInt(numbers);
+  var newNumber = (numberCharacterSet[numbers]);
+  generatePassword = generatePassword + newNumber;
+  (characterAmount = characterAmount - 1);
+} else { }
 //Symbol
-
 var symbol = window.confirm("Would you like to include Symbol?");
 var symbolCharacterSet = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "/", "_", "+", ";", ":", "=", "|", "?"];
-
+if (symbol === true) {
+  var symbols = (Math.floor(Math.random() * 18));
+  parseInt(symbols);
+  var newSymbol = (symbolCharacterSet[symbols]);
+  generatePassword = generatePassword + newSymbol;
+  (characterAmount = characterAmount - 1);
+} else { }
 // Now that I all variables and lenght
 
 // Get references to the #generate element
