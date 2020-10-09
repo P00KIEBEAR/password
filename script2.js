@@ -24,7 +24,8 @@ function writePassword() {
     window.alert('invalid');
     characterAmount = window.prompt("Pick a lenght between 8 - 128");
   }
-
+  var trueCharacterAmount = characterAmount;
+  parseInt(trueCharacterAmount);
   var lower = window.confirm("Would you like to include Lowercase?");
   var upper = window.confirm("Would you like to include Uppercase?");
   var number = window.confirm("Would you like to include Number?");
@@ -85,6 +86,7 @@ function writePassword() {
     return a.join(""); {
     }
   }
+  generatePassword = generatePassword.substr(0, [trueCharacterAmount]);
   //This it to call to 
   generatePassword = generatePassword.shuffle()
   console.log(generatePassword);
