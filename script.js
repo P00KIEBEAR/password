@@ -1,12 +1,12 @@
 // Assignment code here
-var shuffledWord = '';
+
 var generatePassword = '';
 var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
+  // 
 
   //Lenght
-
   var characterAmount = window.prompt("Pick a lenght between 8 - 128");
 
   while (characterAmount < 7 || characterAmount > 129) {
@@ -71,16 +71,21 @@ function writePassword() {
  }
  return a;
 */
-  generatePassword
-  function shuffelWord(word) {
-    var shuffledWord = '';
-    word = word.split('');
-    while (word.length > 0) {
-      shuffledWord += word.splice(word.length * Math.random() << 0, 1);
-    }
-    return shuffledWord;
+  String.prototype.shuffle = function () {
+    var a = this.split(""),
+      n = a.length;
 
+    for (var i = n - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i];
+      a[i] = a[j];
+      a[j] = tmp;
+    }
+    return a.join(""); {
+
+    }
   }
+  generatePassword = generatePassword.shuffle()
   console.log(generatePassword);
   //generatePassword.toString
   var password = generatePassword;
