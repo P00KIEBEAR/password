@@ -8,8 +8,9 @@ function clearPassword() {
   var clearPassword = "**********";
   var clearPasswordText = document.querySelector("#password");
   clearPasswordText.value = clearPassword;
+  generatePassword = ''
 }
-
+// Not happy with second button
 // Write password to the #password input
 function writePassword() {
   //Lenght
