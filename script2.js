@@ -1,6 +1,7 @@
 // Assignment code here
 
 var generatePassword = '';
+// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 var clearBtn = document.querySelector("#clear");
 // clear password?
@@ -8,13 +9,14 @@ function clearPassword() {
   var clearPassword = "**********";
   var clearPasswordText = document.querySelector("#password");
   clearPasswordText.value = clearPassword;
-  generatePassword = ''
+  generatePassword = '';
 }
 // Not happy with second button
 // Write password to the #password input
 function writePassword() {
+  document.querySelector("#password").value = "";
   //Lenght
-  var characterAmount = window.prompt("Pick a lenght between 8 - 128");
+  var characterAmount = window.prompt("Pick a lenght between 8 - 128", 8);
   while (characterAmount < 7 || characterAmount > 129) {
     window.alert('invalid');
     characterAmount = window.prompt("Pick a lenght between 8 - 128");
@@ -24,6 +26,13 @@ function writePassword() {
   var upper = window.confirm("Would you like to include Uppercase?");
   var number = window.confirm("Would you like to include Number?");
   var symbol = window.confirm("Would you like to include Symbol?");
+  while (upper === false && lower === false && number === false && symbol === false) {
+    window.alert("YOU MUST PICK AT LESS ONE OPTION!!");
+    var lower = window.confirm("Would you like to include Lowercase?");
+    var upper = window.confirm("Would you like to include Uppercase?");
+    var number = window.confirm("Would you like to include Number?");
+    var symbol = window.confirm("Would you like to include Symbol?");
+  }
   //must put in if all are false laugh at them
   while (characterAmount > 0) {
     //lowercase
@@ -52,7 +61,6 @@ function writePassword() {
     } else { }
     //Symbol
     var symbolCharacterSet = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "/", "_", "+", ";", ":", "=", "|", "?"];
-    console.log(symbolCharacterSet);
     if (symbol === true) {
       var symbols = (Math.floor(Math.random() * symbolCharacterSet.length));
       parseInt(symbols);
@@ -60,22 +68,9 @@ function writePassword() {
       generatePassword = generatePassword + newSymbol;
       (characterAmount = characterAmount - 1);
     } else { }
-    // Now that I all variables and lenght
-    // Get references to the #generate element
   }
-  // generatePassword = generatePassword.split('');
-  /* NOTE: Got this shuffle algorithm from stackoverflow
-  https://stackoverflow.com/a/6274381
-  function shuffle(a) {
-  var j, x, i;
-  for (i = a.length - 1; i > 0; i--) {
-   j = Math.floor(Math.random() * (i + 1));
-   x = a[i];
-   a[i] = a[j];
-   a[j] = x;
-  }
-  return a;
-  */
+  // Now that I all variables and lenght
+  // This to shuffle up the order of the password
   String.prototype.shuffle = function () {
     var a = this.split(""),
       n = a.length;
@@ -88,6 +83,7 @@ function writePassword() {
     return a.join(""); {
     }
   }
+  //This it to call to 
   generatePassword = generatePassword.shuffle()
   console.log(generatePassword);
   var password = generatePassword;
