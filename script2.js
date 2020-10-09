@@ -13,15 +13,18 @@ function clearPassword() {
 }
 // Not happy with second button
 // Write password to the #password input
+// issue if a letter is but in doesn't work?
 function writePassword() {
   document.querySelector("#password").value = "";
   //Lenght
   var characterAmount = window.prompt("Pick a lenght between 8 - 128", 8);
-  while (characterAmount < 7 || characterAmount > 129) {
+  parseInt(characterAmount);
+  console.log(characterAmount)
+  while (characterAmount < 7 || characterAmount > 129 || isNaN(characterAmount)) {
     window.alert('invalid');
     characterAmount = window.prompt("Pick a lenght between 8 - 128");
   }
-  parseInt(characterAmount);
+
   var lower = window.confirm("Would you like to include Lowercase?");
   var upper = window.confirm("Would you like to include Uppercase?");
   var number = window.confirm("Would you like to include Number?");
@@ -33,7 +36,6 @@ function writePassword() {
     var number = window.confirm("Would you like to include Number?");
     var symbol = window.confirm("Would you like to include Symbol?");
   }
-  //must put in if all are false laugh at them
   while (characterAmount > 0) {
     //lowercase
     const lowercaseCharacterSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
