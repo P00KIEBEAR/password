@@ -20,7 +20,7 @@ function writePassword() {
   var characterAmount = window.prompt("Pick a lenght between 8 - 128", 8);
   parseInt(characterAmount);
   console.log(characterAmount)
-  while (characterAmount < 7 || characterAmount > 129 || isNaN(characterAmount)) {
+  while (characterAmount < 8 || characterAmount > 128 || isNaN(characterAmount)) {
     window.alert('invalid');
     characterAmount = window.prompt("Pick a lenght between 8 - 128");
   }
@@ -93,6 +93,7 @@ function writePassword() {
   var password = generatePassword;
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+  window.alert("Your password will be copy to your clipboard.")
 }
 // Add event listener to generate button "when button is pushed"
 generateBtn.addEventListener("click", writePassword,);
