@@ -19,16 +19,16 @@ function writePassword() {
   }
   var trueCharacterAmount = characterAmount;
   parseInt(trueCharacterAmount);
-  var lower = window.confirm("Would you like to include Lowercase?");
-  var upper = window.confirm("Would you like to include Uppercase?");
-  var number = window.confirm("Would you like to include Number?");
-  var symbol = window.confirm("Would you like to include Symbol?");
+  var lower = window.confirm("Click OK if you like to include Lowercase?");
+  var upper = window.confirm("WClick OK ifyou like to include Uppercase?");
+  var number = window.confirm("Click OK if you like to include Number?");
+  var symbol = window.confirm("Click OK if you like to include Symbol?");
   while (upper === false && lower === false && number === false && symbol === false) {
     window.alert("YOU MUST PICK AT LESS ONE OPTION!!");
-    lower = window.confirm("Would you like to include Lowercase?");
-    upper = window.confirm("Would you like to include Uppercase?");
-    number = window.confirm("Would you like to include Number?");
-    symbol = window.confirm("Would you like to include Symbol?");
+    lower = window.confirm("Click OK if you like to include Lowercase?");
+    upper = window.confirm("Click OK if you like to include Uppercase?");
+    number = window.confirm("Click OK if you like to include Number?");
+    symbol = window.confirm("Click OK if you like to include Symbol?");
   }
   // Now that I all variables and lenght
   while (characterAmount > 0) {
