@@ -1,21 +1,14 @@
 // Assignment code here
 
-var generatePassword = '';
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 var clearBtn = document.querySelector("#clear");
-// clear password?
-function clearPassword() {
-  var clearPassword = "**********";
-  var clearPasswordText = document.querySelector("#password");
-  clearPasswordText.value = clearPassword;
-  generatePassword = '';
-}
 // Not happy with second button
 // Write password to the #password input
 // issue if a letter is but in doesn't work?
 function writePassword() {
   document.querySelector("#password").value = "";
+  var generatePassword = '';
   //Lenght
   var characterAmount = window.prompt("Pick a lenght between 8 - 128", 8);
   parseInt(characterAmount);
@@ -32,14 +25,15 @@ function writePassword() {
   var symbol = window.confirm("Would you like to include Symbol?");
   while (upper === false && lower === false && number === false && symbol === false) {
     window.alert("YOU MUST PICK AT LESS ONE OPTION!!");
-    var lower = window.confirm("Would you like to include Lowercase?");
-    var upper = window.confirm("Would you like to include Uppercase?");
-    var number = window.confirm("Would you like to include Number?");
-    var symbol = window.confirm("Would you like to include Symbol?");
+    lower = window.confirm("Would you like to include Lowercase?");
+    upper = window.confirm("Would you like to include Uppercase?");
+    number = window.confirm("Would you like to include Number?");
+    symbol = window.confirm("Would you like to include Symbol?");
   }
+  // Now that I all variables and lenght
   while (characterAmount > 0) {
     //lowercase
-    const lowercaseCharacterSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var lowercaseCharacterSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     if (lower === true) {
       var lowerLetter = (Math.floor(Math.random() * lowercaseCharacterSet.length));
       parseInt(lowerLetter);
@@ -72,7 +66,6 @@ function writePassword() {
       (characterAmount = characterAmount - 1);
     } else { }
   }
-  // Now that I all variables and lenght
   // This to shuffle up the order of the password
   String.prototype.shuffle = function () {
     var a = this.split(""),
@@ -93,7 +86,7 @@ function writePassword() {
   var password = generatePassword;
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  window.alert("Your password will be copy to your clipboard.")
+  //  did to copy to clipboard?
 }
 // Add event listener to generate button "when button is pushed"
 generateBtn.addEventListener("click", writePassword,);
