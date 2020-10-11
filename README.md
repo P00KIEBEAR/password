@@ -1,6 +1,8 @@
 # password
 https://github.com/P00KIEBEAR
 
+https://p00kiebear.github.io/password/
+
 * Table of contents
 * About the Project
 * built with
@@ -41,6 +43,8 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
+**Screenshot**
+<img src="Screenshot 2020-10-10 185006.png">
 
 
 ## Acknowlledements
