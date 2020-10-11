@@ -3,22 +3,19 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 var clearBtn = document.querySelector("#clear");
-// Not happy with second button
+
 // Write password to the #password input
-// issue if a letter is but in doesn't work?
 function writePassword() {
   document.querySelector("#password").value = "";
   var generatePassword = '';
   //Lenght
   var characterAmount = window.prompt("Pick a lenght between 8 - 128", 8);
-  parseInt(characterAmount);
-  console.log(characterAmount)
   while (characterAmount < 8 || characterAmount > 128 || isNaN(characterAmount)) {
     window.alert('invalid');
     characterAmount = window.prompt("Pick a lenght between 8 - 128");
   }
   var trueCharacterAmount = characterAmount;
-  parseInt(trueCharacterAmount);
+  //Pick variables
   var lower = window.confirm("Click OK if you like to include Lowercase?");
   var upper = window.confirm("WClick OK ifyou like to include Uppercase?");
   var number = window.confirm("Click OK if you like to include Number?");
@@ -36,7 +33,6 @@ function writePassword() {
     var lowercaseCharacterSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     if (lower === true) {
       var lowerLetter = (Math.floor(Math.random() * lowercaseCharacterSet.length));
-      parseInt(lowerLetter);
       var newLowerLetter = (lowercaseCharacterSet[lowerLetter]);
       generatePassword = generatePassword + newLowerLetter;
       (characterAmount = characterAmount - 1);
@@ -45,7 +41,6 @@ function writePassword() {
     var uppercaseCharacterSet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     if (upper === true) {
       var upLetter = (Math.floor(Math.random() * uppercaseCharacterSet.length));
-      parseInt(upLetter);
       var newUpLetter = (uppercaseCharacterSet[upLetter]);
       generatePassword = generatePassword + newUpLetter;
       (characterAmount = characterAmount - 1);
@@ -60,7 +55,6 @@ function writePassword() {
     var symbolCharacterSet = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "/", "_", "+", ";", ":", "=", "|", "?"];
     if (symbol === true) {
       var symbols = (Math.floor(Math.random() * symbolCharacterSet.length));
-      parseInt(symbols);
       var newSymbol = (symbolCharacterSet[symbols]);
       generatePassword = generatePassword + newSymbol;
       (characterAmount = characterAmount - 1);
