@@ -84,4 +84,3 @@ function writePassword() {
 }
 // Add event listener to generate button "when button is pushed"
 generateBtn.addEventListener("click", writePassword,);
-clearBtn.addEventListener("click", clearPassword,);
