@@ -2,7 +2,6 @@
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-var clearBtn = document.querySelector("#clear");
 
 // Write password to the #password input
 function writePassword() {
@@ -35,30 +34,30 @@ function writePassword() {
       var lowerLetter = (Math.floor(Math.random() * lowercaseCharacterSet.length));
       var newLowerLetter = (lowercaseCharacterSet[lowerLetter]);
       generatePassword = generatePassword + newLowerLetter;
-      (characterAmount = characterAmount - 1);
-    } else { }
+      characterAmount = characterAmount - 1;
+    }
     //uppercase
     var uppercaseCharacterSet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     if (upper === true) {
       var upLetter = (Math.floor(Math.random() * uppercaseCharacterSet.length));
       var newUpLetter = (uppercaseCharacterSet[upLetter]);
       generatePassword = generatePassword + newUpLetter;
-      (characterAmount = characterAmount - 1);
-    } else { }
+      characterAmount = characterAmount - 1;
+    }
     //Number
     if (number === true) {
       var numberCharacterSet = (Math.floor(Math.random() * 10));
       generatePassword = generatePassword + numberCharacterSet;
-      (characterAmount = characterAmount - 1);
-    } else { }
+      characterAmount = characterAmount - 1;
+    }
     //Symbol
     var symbolCharacterSet = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "/", "_", "+", ";", ":", "=", "|", "?"];
     if (symbol === true) {
       var symbols = (Math.floor(Math.random() * symbolCharacterSet.length));
       var newSymbol = (symbolCharacterSet[symbols]);
       generatePassword = generatePassword + newSymbol;
-      (characterAmount = characterAmount - 1);
-    } else { }
+      characterAmount = characterAmount - 1;
+    }
   }
   // This to shuffle up the order of the password
   String.prototype.shuffle = function () {
